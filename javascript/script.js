@@ -1,5 +1,5 @@
 const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`;
-const generetePokemonPromises = () => Array(649).fill().map((_, index) => 
+const generetePokemonPromises = () => Array(20).fill().map((_, index) => 
     fetch(getPokemonUrl(index + 1)).then(response => response.json()))
 
 const generateHTML = pokemons => pokemons.reduce((accumulator, {name, id, types}) => {
@@ -13,6 +13,27 @@ const generateHTML = pokemons => pokemons.reduce((accumulator, {name, id, types}
     `
     return accumulator
 }, '')
+
+/*const searchPokemon = (event, getPokemonUrl) => {
+    const result = event.document.querySelector('.search_pokemon')
+    if(result == `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`){
+        result =  `
+            <li class="card ${elementTypes[0]}">
+                <img class="card-image" alt="${pokemon.name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemon.name.toLowerCase()}.gif"/>
+                <h2 class="card-title">${id}.${pokemon.name}</h2>
+                <p class="card-subtitle">${elementTypes.join(' | ')}</p>
+            </li>
+        `
+        console.log(result)
+    }
+}*/
+
+const searchPokemon = () => {
+    const resultSearch = document.querySelector(".search_pokemon")
+        .addEventListener('submit', () => {
+            console.log(resultSearch.value)
+        })
+}
 
 const insertPokemonsInToPage = pokemons => {
     const ul = document.querySelector('[data-js="pokedex"]')

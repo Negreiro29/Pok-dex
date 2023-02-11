@@ -1,6 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: #EFEFBB;
-    background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
+    background: linear-gradient(to right, rgb(165, 245, 183), rgb(237, 153, 153));
     color: white;
     margin: 0;
     font-family: rubik;
@@ -133,7 +138,7 @@ h1 {
 
 .card-subtitle {
     margin-top: 5px;
-    color: rgb(61, 61, 61);
+    color: #304242;
     font-weight: lighter;
     position: relative;
     z-index: 2;
@@ -162,4 +167,19 @@ h1 {
     100% {
         transform: translateY(0);
     }  
+}
+
+.search_pokemon {
+    height: 25px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(165, 245, 183), rgb(176, 232, 179));
+    color: #FFF;
+}
+
+.search-submit {
+    height: 25px;
+    width: 100px;
+    border-radius: 10px;
 }
